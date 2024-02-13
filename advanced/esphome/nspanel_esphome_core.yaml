@@ -68,6 +68,11 @@ esp32:
 wifi:
   id: wifi_component
   power_save_mode: LIGHT
+  
+  networks:
+    - id: wifi_default
+      ssid: ${wifi_ssid}
+      password: ${wifi_password}
   manual_ip:
     # Set this to the IP of the ESP
     static_ip: 10.0.0.115
@@ -75,10 +80,6 @@ wifi:
     gateway: 10.0.0.1
     # The subnet of the network. 255.255.255.0 works for most home networks.
     subnet: 255.255.255.0
-  networks:
-    - id: wifi_default
-      ssid: ${wifi_ssid}
-      password: ${wifi_password}
   ap:
     ssid: "${name}"
     password: ${ap_password}
